@@ -3,4 +3,5 @@ folium
 streamlit_folium
 rasterio
 geopandas
+mysql
 mysqlclient
