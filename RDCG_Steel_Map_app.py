@@ -6,7 +6,7 @@ import folium
 from folium import plugins
 
 import rasterio as rio #library for GeoTIFF and GIS formats
-import webbrowser  # open file in webbrowser
+
 import geopandas as gpd #used to change crs coordinates
 
 #import for webapp
