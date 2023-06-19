@@ -3,6 +3,5 @@ folium
 streamlit_folium
 rasterio
 geopandas
-default-libmysqlclient-dev
 build-essential
 mysqlclient
