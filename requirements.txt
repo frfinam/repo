@@ -3,4 +3,7 @@ folium
 streamlit_folium
 rasterio
 geopandas
-MySQL
+python3-dev
+default-libmysqlclient-dev
+build-essential
+mysqlclient
