@@ -1,5 +1,5 @@
 SQLAlchemy
 folium
-
+streamlit_folium
 rasterio
 geopandas
