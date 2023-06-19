@@ -1,5 +1,5 @@
 SQLAlchemy
 folium
-IO
+
 rasterio
 geopandas
