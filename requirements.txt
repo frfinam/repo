@@ -3,5 +3,4 @@ folium
 streamlit_folium
 rasterio
 geopandas
-build-essential
 mysqlclient
