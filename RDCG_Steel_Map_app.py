@@ -20,7 +20,7 @@ APP_TITLE = "RDCG - WebMap of Steel Structures"
 ########################################### START: CREATE A TABLE OF PREFABRICATION PROGRESS #########################################################
 
 #Connect to rddump of easystructure dataview to have prefabrication progress
-connection_string = "mysql+mysqlconnector://ssmsuser:ssmsuser@EU012VM0589.tp.tpnet.intra:3306/ssms082755c"
+connection_string = ""
 sql_engine = sql.create_engine(connection_string, echo=True)
 query  = "select Area, Structure, dp_mp, Name, RD, am_serial_no, Weight, DESCRIP, Vendor, fab_start_date, fab_completed_date, srn_date from ssms_rddump"
 df = pd.read_sql_query(query, sql_engine)
