@@ -33,7 +33,7 @@ def create_onedrive_directdownload (onedrive_link):
 cols   = ['Area', 'Structure', 'dp_mp', 'Name', 'RD', 'am_serial_no', 'Weight', 'DESCRIP', 'Vendor', 'fab_start_date', 'fab_completed_date', 'srn_date']
 df_one_drive = "https://1drv.ms/u/s!AiiyfzN3UvpehmUkUFsbpinRg_IV?e=gLQ7Sm"
 df_link = create_onedrive_directdownload (df_one_drive)
-df = pd.read_csv(df_link, encoding=''utf-8')[cols]
+df = pd.read_csv(df_link, encoding='utf-8')[cols]
 
 
 # add a Main Description of marks by few main category (MAIN STEEL, GRATINGS,..)
