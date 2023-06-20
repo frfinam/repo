@@ -5,6 +5,7 @@ import sqlalchemy  as sql
 import mysql.connector
 import folium
 from folium import plugins
+from mysql.connector import st.experimental_connection
 
 import rasterio as rio #library for GeoTIFF and GIS formats
 
@@ -28,7 +29,7 @@ conn = st.experimental_connection('mysql', type='sql')
 #query  = [Area, Structure, dp_mp, Name, RD, am_serial_no, Weight, DESCRIP, Vendor, fab_start_date, fab_completed_date, srn_date]
 
 # Perform query.
-df = conn.query('SELECT * from ssms_rddump;', ttl=600)
+df = conn.query('SELECT * from ssms_rddump;', ttl=0)
 
 
 
