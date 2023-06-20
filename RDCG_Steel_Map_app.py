@@ -24,7 +24,7 @@ APP_TITLE = "RDCG - WebMap of Steel Structures"
 conn = st.experimental_connection('mysql', type='sql')
 
 
-query  = [Area, Structure, dp_mp, Name, RD, am_serial_no, Weight, DESCRIP, Vendor, fab_start_date, fab_completed_date, srn_date]
+#query  = [Area, Structure, dp_mp, Name, RD, am_serial_no, Weight, DESCRIP, Vendor, fab_start_date, fab_completed_date, srn_date]
 
 # Perform query.
 df = conn.query('SELECT * from ssms_rddump;', ttl=600)
