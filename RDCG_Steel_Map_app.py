@@ -23,7 +23,7 @@ APP_TITLE = "RDCG - WebMap of Steel Structures"
 
 #Connect to rddump of easystructure dataview to have prefabrication progress
 cols   = ['Area', 'Structure', 'dp_mp', 'Name', 'RD', 'am_serial_no', 'Weight', 'DESCRIP', 'Vendor', 'fab_start_date', 'fab_completed_date', 'srn_date']
-df = pd.read_csv("C://Users//ffinamore//Desktop//Folium//Input//ssms_rddump.csv", low_memory=False)[cols]
+df = pd.read_csv(""https://github.com/frfinam/repo/blob/main/ssms_rddump.csv", low_memory=False)[cols]
 
 
 # add a Main Description of marks by few main category (MAIN STEEL, GRATINGS,..)
@@ -55,8 +55,9 @@ df_Prfb = df.groupby("Structure")[["Weight", "Fabric_Started_Qty","Fabricated_Qt
 ########################################### START: CREATE A TABLE OF PROCUREMENT PROGRESS #########################################################
 columns_selected = ["ROUTING_METHOD_CODE","Requisition number","Req Pos","PO Number","Req Sub Pos","ISH Pos","ISH Sub Pos","PO Long description",  "Tag Number", "Ident Description", "Supplier Code","Destination", "Forecasted Date", "Actual Date"]
 
-file = "C:/Users/ffinamore/Desktop/Folium/Input/IEETDE01.xlsx"
-file_dp = "C:/Users/ffinamore/Desktop/Folium/Input/Weight_DP_Item.xlsx"
+file = "https://github.com/frfinam/repo/blob/main/IEETDE01.xlsx"
+
+file_dp = "https://github.com/frfinam/repo/blob/main/Weight_DP_Item.xlsx"
 
 
 
@@ -146,9 +147,8 @@ ED = E_delta_local_cad_local_3d_m = -1500
 ND = N_delta_local_cad_local_3d_m = 300
 
 
-df_3D = pd.read_csv("C://Users//ffinamore//Desktop//Folium//Input//3D_Item.csv")
+df_3D = pd.read_csv("https://github.com/frfinam/repo/blob/main/3D_Item.csv" ,low_memory=False)
 
-#print(df_3D)
 
 #create a point from two columns 
 # and set its coordinate reference system (CRS)
