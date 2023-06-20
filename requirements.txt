@@ -4,3 +4,4 @@ streamlit_folium
 rasterio
 geopandas
 mysqlclient
+mysql_connector
