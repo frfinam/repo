@@ -168,6 +168,7 @@ ND = N_delta_local_cad_local_3d_m = 300
 df_3D_one_drive = "https://1drv.ms/u/s!AiiyfzN3UvpehmKgEVggK5U8u88O?e=YhiFlx"
 df_3D_link = create_onedrive_directdownload (df_3D_one_drive)
 
+df_3D = pd.read_csv(df_3D_link,low_memory=False)
 
 #create a point from two columns 
 # and set its coordinate reference system (CRS)
