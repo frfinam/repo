@@ -33,7 +33,7 @@ def create_onedrive_directdownload (onedrive_link):
 cols   = ['Area', 'Structure', 'dp_mp', 'Name', 'RD', 'am_serial_no', 'Weight', 'DESCRIP', 'Vendor', 'fab_start_date', 'fab_completed_date', 'srn_date']
 df_one_drive = "https://1drv.ms/u/s!AiiyfzN3UvpehmUkUFsbpinRg_IV?e=gLQ7Sm"
 df_link = create_onedrive_directdownload (df_one_drive)
-df = pd.read_csv(df_link,encoding='encoding')[cols]
+df = pd.read_csv(df_link, encoding="latin-1")[cols]
 
 
 # add a Main Description of marks by few main category (MAIN STEEL, GRATINGS,..)
@@ -200,7 +200,7 @@ geodf['Long']=geodf['geometry'].x
 # open the list of tags option from one drive
 df_Tag_List_one_drive = "https://1drv.ms/x/s!AiiyfzN3UvpehmQYM6quS_oQA5Vv?e=71WiqS"
 df_Tag_List_one_link = create_onedrive_directdownload (df_Tag_List_one_drive)
-df_Tag_List = pd.read_csv(df_Tag_List_one_link, encoding='encoding')
+df_Tag_List = pd.read_csv(df_Tag_List_one_link,encoding="latin-1")
 
 
 #add fabrication status from ESS to tag list
