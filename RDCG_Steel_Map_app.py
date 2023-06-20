@@ -74,17 +74,15 @@ file_dp = create_onedrive_directdownload(file_dp_one_drive)
 
 
 #expediting report
-with open(file, "rb") as f:
-    file_io_obj = io.BytesIO(f.read())
+
     
-de = pd.read_excel(file_io_obj, engine='openpyxl',  skiprows=8, header=0, usecols=columns_selected)
+de = pd.read_excel(file, engine='openpyxl',  skiprows=8, header=0, usecols=columns_selected)
 
 
 #weight of delivery package
-with open(file_dp, "rb") as g:
-    file_io_obj1 = io.BytesIO(g.read())
+
     
-dp = pd.read_excel(file_io_obj1, engine='openpyxl', header=0)
+dp = pd.read_excel(file_dp, engine='openpyxl', header=0)
 dp['Procurem_Key1'] = dp['PO Number'].map(str)+"_"+dp['Req Pos'].map(str)+"_"+dp['Req Sub Pos'].map(str)+"_"+dp['ISH Pos'].map(str)+"_"+dp['ISH Sub Pos'].map(str)
 dp1 = dp[['Procurem_Key1','Weight(Kg)']]  
 
