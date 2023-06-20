@@ -2,6 +2,7 @@ import io
 import numpy as np 
 import pandas as pd
 import sqlalchemy  as sql
+import mysql.connector
 import folium
 from folium import plugins
 
