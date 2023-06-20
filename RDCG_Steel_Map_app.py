@@ -62,6 +62,8 @@ df_Prfb = df.groupby("Structure")[["Weight", "Fabric_Started_Qty","Fabricated_Qt
 
 
 ########################################### START: CREATE A TABLE OF PROCUREMENT PROGRESS #########################################################
+columns_selected = ["ROUTING_METHOD_CODE","Requisition number","Req Pos","PO Number","Req Sub Pos","ISH Pos","ISH Sub Pos","PO Long description",  "Tag Number", "Ident Description", "Supplier Code","Destination", "Forecasted Date", "Actual Date"]
+
 #file = "C:/Users/ffinamore/Desktop/Folium/Input/IEETDE01.xlsx"
 #  option from one drive
 file_one_drive ="https://1drv.ms/x/s!AiiyfzN3UvpehmYbSBx3aFBcaXGr?e=36n4ud"
