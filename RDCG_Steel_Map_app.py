@@ -168,7 +168,7 @@ ND = N_delta_local_cad_local_3d_m = 300
 df_3D_one_drive = "https://1drv.ms/u/s!AiiyfzN3UvpehmKgEVggK5U8u88O?e=YhiFlx"
 df_3D_link = create_onedrive_directdownload (df_3D_one_drive)
 
-df_3D = pd.read_csv(df_3D_link,low_memory=False)
+df_3D = pd.read_csv(df_3D_link)
 
 #create a point from two columns 
 # and set its coordinate reference system (CRS)
@@ -200,7 +200,7 @@ geodf['Long']=geodf['geometry'].x
 # open the list of tags option from one drive
 df_Tag_List_one_drive = "https://1drv.ms/x/s!AiiyfzN3UvpehmQYM6quS_oQA5Vv?e=71WiqS"
 df_Tag_List_one_link = create_onedrive_directdownload (df_Tag_List_one_drive)
-df_Tag_List = pd.read_csv(df_Tag_List_one_link, low_memory=False)
+df_Tag_List = pd.read_csv(df_Tag_List_one_link)
 
 
 #add fabrication status from ESS to tag list
