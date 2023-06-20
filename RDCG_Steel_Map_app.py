@@ -5,7 +5,7 @@ import sqlalchemy  as sql
 import mysql.connector
 import folium
 from folium import plugins
-from mysql.connector import st.experimental_connection
+
 
 import rasterio as rio #library for GeoTIFF and GIS formats
 
