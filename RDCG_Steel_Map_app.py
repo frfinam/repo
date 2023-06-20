@@ -166,7 +166,7 @@ ND = N_delta_local_cad_local_3d_m = 300
 #df_3D = pd.read_csv("C://Users//ffinamore//Desktop//Folium//Input//3D_Item.csv")
 #  option from one drive
 df_3D_one_drive = "https://1drv.ms/u/s!AiiyfzN3UvpehmKgEVggK5U8u88O?e=YhiFlx"
-df_3D_link = create_onedrive_directdownload (df_3D_one_drive, low_memory=False)
+df_3D_link = create_onedrive_directdownload (df_3D_one_drive)
 
 
 #create a point from two columns 
