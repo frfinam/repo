@@ -77,7 +77,7 @@ file_dp = create_onedrive_directdownload(file_dp_one_drive)
 with open(file, "rb") as f:
     file_io_obj = io.BytesIO(f.read())
     
-df = pd.read_excel(file_io_obj, engine='openpyxl',  skiprows=8, header=0, usecols=columns_selected)
+de = pd.read_excel(file_io_obj, engine='openpyxl',  skiprows=8, header=0, usecols=columns_selected)
 
 
 #weight of delivery package
@@ -91,7 +91,7 @@ dp1 = dp[['Procurem_Key1','Weight(Kg)']]
 
 
 #select procurement data for steel structures scope of work of RDCG 
-df1 = df[((df['ROUTING_METHOD_CODE'].str.contains("RDCG")) & (df['PO Long description'] == "STEEL STRUCTURES"))]
+df1 = de[((de['ROUTING_METHOD_CODE'].str.contains("RDCG")) & (de['PO Long description'] == "STEEL STRUCTURES"))]
 
 
 #select just the start of shipping and site arrival
