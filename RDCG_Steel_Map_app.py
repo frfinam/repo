@@ -23,7 +23,7 @@ APP_TITLE = "RDCG - WebMap of Steel Structures"
 
 #Connect to rddump of easystructure dataview to have prefabrication progress
 cols   = ['Area', 'Structure', 'dp_mp', 'Name', 'RD', 'am_serial_no', 'Weight', 'DESCRIP', 'Vendor', 'fab_start_date', 'fab_completed_date', 'srn_date']
-df = pd.read_csv(""https://github.com/frfinam/repo/blob/main/ssms_rddump.csv", low_memory=False)[cols]
+df = pd.read_csv("https://github.com/frfinam/repo/blob/main/ssms_rddump.csv", low_memory=False)[cols]
 
 
 # add a Main Description of marks by few main category (MAIN STEEL, GRATINGS,..)
