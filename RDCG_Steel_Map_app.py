@@ -1,4 +1,5 @@
 import io
+import base64
 import numpy as np 
 import pandas as pd
 import sqlalchemy  as sql
@@ -18,12 +19,21 @@ from streamlit_folium import st_folium
 APP_TITLE = "RDCG - WebMap of Steel Structures"
 
 
+# To be used to convert onedrivelink in download url
+def create_onedrive_directdownload (onedrive_link):
+    data_bytes64 = base64.b64encode(bytes(onedrive_link, 'utf-8'))
+    data_bytes64_String = data_bytes64.decode('utf-8').replace('/','_').replace('+','-').rstrip("=")
+    resultUrl = f"https://api.onedrive.com/v1.0/shares/u!{data_bytes64_String}/root/content"
+    return resultUrl
+
 
 ########################################### START: CREATE A TABLE OF PREFABRICATION PROGRESS #########################################################
 
 #Connect to rddump of easystructure dataview to have prefabrication progress
 cols   = ['Area', 'Structure', 'dp_mp', 'Name', 'RD', 'am_serial_no', 'Weight', 'DESCRIP', 'Vendor', 'fab_start_date', 'fab_completed_date', 'srn_date']
-df = pd.read_csv("https://github.com/frfinam/repo/blob/main/ssms_rddump.csv", low_memory=False)[cols]
+df_one_drive = "https://1drv.ms/u/s!AiiyfzN3UvpehmUkUFsbpinRg_IV?e=gLQ7Sm"
+df_link = create_onedrive_directdownload (df_one_drive)
+df = pd.read_csv(df_link, low_memory=False)[cols]
 
 
 # add a Main Description of marks by few main category (MAIN STEEL, GRATINGS,..)
@@ -53,11 +63,14 @@ df_Prfb = df.groupby("Structure")[["Weight", "Fabric_Started_Qty","Fabricated_Qt
 
 
 ########################################### START: CREATE A TABLE OF PROCUREMENT PROGRESS #########################################################
-columns_selected = ["ROUTING_METHOD_CODE","Requisition number","Req Pos","PO Number","Req Sub Pos","ISH Pos","ISH Sub Pos","PO Long description",  "Tag Number", "Ident Description", "Supplier Code","Destination", "Forecasted Date", "Actual Date"]
-
-file = "https://github.com/frfinam/repo/blob/main/IEETDE01.xlsx"
-
-file_dp = "https://github.com/frfinam/repo/blob/main/Weight_DP_Item.xlsx"
+#file = "C:/Users/ffinamore/Desktop/Folium/Input/IEETDE01.xlsx"
+#  option from one drive
+file_one_drive ="https://1drv.ms/x/s!AiiyfzN3UvpehmYbSBx3aFBcaXGr?e=36n4ud"
+file = create_onedrive_directdownload(file_one_drive)
+#file_dp = "C:/Users/ffinamore/Desktop/Folium/Input/Weight_DP_Item.xlsx"
+#  option from one drive
+file_dp_one_drive ="https://1drv.ms/x/s!AiiyfzN3UvpehmPWAlUb31CFi26b?e=mvvWCB"
+file_dp = create_onedrive_directdownload(file_dp_one_drive)
 
 
 
@@ -117,7 +130,10 @@ df_Exp.rename(columns={'ShippedWeight': 'Shipped_Qty','AtSiteWeight': 'At_Site_Q
 screens_path = "https://github.com/frfinam/scrsht/blob/main/"
 
 # file path of the image (png) to add as tile layer
-img_MNA_SAT = "C://Users//ffinamore//OneDrive - TEN//20 - Projects//082755C - Neste RDCG Rotterdam//05 - WFM//01 - Civil//06 - Mapping//Sat//23-05-09_MNA//Factual Plot Plan_MNA_05.05.2023_BI_modified.tif"
+#img_MNA_SAT = "C://Users//ffinamore//OneDrive - TEN//20 - Projects//082755C - Neste RDCG Rotterdam//05 - WFM//01 - Civil//06 - Mapping//Sat//23-05-09_MNA//Factual Plot Plan_MNA_05.05.2023_BI_modified.tif"
+#  option from one drive
+img_MNA_SAT_one_drive = "https://1drv.ms/i/s!AiiyfzN3UvpehmHk8eOdXHPb78m-?e=5fgt3M"
+img_MNA_SAT = create_onedrive_directdownload (img_MNA_SAT_one_drive)
 
 # manage the TIF file 
 with rio.open(img_MNA_SAT) as src:
@@ -147,7 +163,10 @@ ED = E_delta_local_cad_local_3d_m = -1500
 ND = N_delta_local_cad_local_3d_m = 300
 
 
-df_3D = pd.read_csv("https://github.com/frfinam/repo/blob/main/3D_Item.csv" ,low_memory=False)
+#df_3D = pd.read_csv("C://Users//ffinamore//Desktop//Folium//Input//3D_Item.csv")
+#  option from one drive
+df_3D_one_drive = "https://1drv.ms/u/s!AiiyfzN3UvpehmKgEVggK5U8u88O?e=YhiFlx"
+df_3D_link = create_onedrive_directdownload (df_3D_one_drive, low_memory=False)
 
 
 #create a point from two columns 
@@ -176,7 +195,11 @@ geodf['Long']=geodf['geometry'].x
 
 ########################################### START: POPULATE TAG TABLES USED IN MAP #########################################################
 # open the list of tags
-df_Tag_List = pd.read_csv("C://Users//ffinamore//Desktop//Folium//Input//MainStructures.csv")
+#df_Tag_List = pd.read_csv("C://Users//ffinamore//Desktop//Folium//Input//MainStructures.csv"
+# open the list of tags option from one drive
+df_Tag_List_one_drive = "https://1drv.ms/x/s!AiiyfzN3UvpehmQYM6quS_oQA5Vv?e=71WiqS"
+df_Tag_List_one_link = create_onedrive_directdownload (df_Tag_List_one_drive)
+df_Tag_List = pd.read_csv(df_Tag_List_one_link, low_memory=False)
 
 
 #add fabrication status from ESS to tag list
