@@ -6,3 +6,4 @@ geopandas
 mysqlclient
 mysql_connector
 mysql-connector-python
+openpyxl
