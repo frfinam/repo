@@ -17,7 +17,8 @@ from streamlit_folium import st_folium
 APP_TITLE = 'Steel Structures Prefabr. - Web Map'
 APP_SUB_TITLE = 'RDCG Project'
 
-
+st.title(APP_TITLE)
+st.caption(APP_SUB_TITLE)
 
 
 # To be used to convert onedrivelink in download url
@@ -482,14 +483,12 @@ m.get_root().script.add_child(folium.Element(png_js))
 ########################################### END: MAP FEATURES AND PLUGIN #########################################################  
 ##################################################################################################################################################
 
+st_map = st_folium(m, width=1900, height=500, returned_objects=[]) 
 
-with st.container():
-   st.write("This is the map")
+st.container(st_map)
 
-   # You can call any Streamlit command, including custom components:
-   st_map = st_folium(m, width=1900, height=500, returned_objects=[]) 
+   
 
-st.title(APP_TITLE)
-st.caption(APP_SUB_TITLE)
+
 
 
