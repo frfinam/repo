@@ -7,7 +7,7 @@ from folium import plugins
 
 
 import rasterio as rio #library for GeoTIFF and GIS formats
-
+import streamlit.components.v1 as components
 import geopandas as gpd #used to change crs coordinates
 
 #import for webapp
@@ -482,8 +482,8 @@ L.control.bigImage({position: 'topleft'}).addTo({map});
 m.get_root().script.add_child(folium.Element(png_js))
 ########################################### END: MAP FEATURES AND PLUGIN #########################################################  
 ##################################################################################################################################################
-
-st_map = st_folium(m, width=1900, height=500, returned_objects=[]) 
+st.set_page_config(layout="wide")
+st_map = st_folium(m, returned_objects=[]) 
 
 
 
