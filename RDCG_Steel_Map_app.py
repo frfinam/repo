@@ -481,7 +481,7 @@ def display_map():
     m.get_root().script.add_child(folium.Element(png_js))
     ########################################### END: MAP FEATURES AND PLUGIN #########################################################  
     ##################################################################################################################################################
-    st_map = st_folium(m, max_width=1900, height=500, returned_objects=[])
+    st_map = st_folium(m, width=1900, height=500, returned_objects=[])
 
     
 
