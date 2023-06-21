@@ -19,7 +19,7 @@ APP_SUB_TITLE = 'RDCG Project'
 
 st.set_page_config(layout = 'wide')
 
-c1, c2, c3 = st.beta_columns((1, 3, 1))
+c1, c2, c3 = st.columns((1, 3, 1))
 
 c1.title('Column 1')
 c2.title('Column 2')
