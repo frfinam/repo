@@ -17,6 +17,14 @@ from streamlit_folium import st_folium
 APP_TITLE = 'Steel Structures Prefabr. - Web Map'
 APP_SUB_TITLE = 'RDCG Project'
 
+st.set_page_config(layout = 'wide')
+
+c1, c2, c3 = st.beta_columns((1, 3, 1))
+
+c1.title('Column 1')
+c2.title('Column 2')
+c3.title('Column 3')
+
 st.title(APP_TITLE)
 st.caption(APP_SUB_TITLE)
 
@@ -491,7 +499,9 @@ def _max_width_(prcnt_width:int = 75):
                 """, 
                 unsafe_allow_html=True,
     )
-st_map = st_folium(m, width= _max_width_(100), height=500, returned_objects=[]) 
+
+with c2:    
+    st_map = st_folium(m, width= _max_width_(100), height=500, returned_objects=[]) 
 
 
 
