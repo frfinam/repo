@@ -215,7 +215,7 @@ df_MS = pd.merge(df_MS_2, geodf, how='left', left_on=['Tag'], right_on=['TAG'])
 #replace NaN with 0  NON FUNZIONA
 df_MS.fillna(0)
 
-print(df_MS)
+#print(df_MS)
 ########################################### END: POPULATE TAG TABLES USED IN MAP #########################################################
 ##################################################################################################################################################
 
@@ -483,16 +483,12 @@ m.get_root().script.add_child(folium.Element(png_js))
 ##################################################################################################################################################
 st_map = st_folium(m, width=1900, height=500, returned_objects=[]) 
 
-           
-
-    
-
-    
 
 
 
+with st.expander(expanded=False):
+    st_map
 
-st.set_page_config(APP_TITLE)
 st.title(APP_TITLE)
 st.caption(APP_SUB_TITLE)
 
