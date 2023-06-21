@@ -482,10 +482,7 @@ L.control.bigImage({position: 'topleft'}).addTo({map});
 m.get_root().script.add_child(folium.Element(png_js))
 ########################################### END: MAP FEATURES AND PLUGIN #########################################################  
 ##################################################################################################################################################
-from branca.element import Figure
-fig = Figure(width='70%', height='50%')
-m = folium.Map()
-fig.add_child(m)
+
 st_folium(m, returned_objects=[]) 
 
 
