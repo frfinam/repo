@@ -481,13 +481,13 @@ L.control.bigImage({position: 'topleft'}).addTo({map});
 m.get_root().script.add_child(folium.Element(png_js))
 ########################################### END: MAP FEATURES AND PLUGIN #########################################################  
 ##################################################################################################################################################
-st_map = st_folium(m, width=1900, height=500, returned_objects=[]) 
 
 
+with st.container():
+   st.write("This is the map")
 
-
-with st.expander(expanded=False):
-    st_map
+   # You can call any Streamlit command, including custom components:
+   st_map = st_folium(m, width=1900, height=500, returned_objects=[]) 
 
 st.title(APP_TITLE)
 st.caption(APP_SUB_TITLE)
