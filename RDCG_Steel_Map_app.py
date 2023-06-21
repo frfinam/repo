@@ -491,7 +491,7 @@ def _max_width_(prcnt_width:int = 75):
                 """, 
                 unsafe_allow_html=True,
     )
-st_map = st_folium(m, width= _max_width_(150), height=500, returned_objects=[]) 
+st_map = st_folium(m, width= _max_width_(100), height=500, returned_objects=[]) 
 
 
 
