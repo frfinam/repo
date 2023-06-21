@@ -494,9 +494,18 @@ def _max_width_(prcnt_width:int = 75):
                 """, 
                 unsafe_allow_html=True,
     )
-
+    
+def _max_heighth_(prcnt_height:int = 75):
+    max_height_str = f"max-height: {prcnt_height}%;"
+    st.markdown(f""" 
+                <style> 
+                .reportview-container .main .block-container{{{max_height_str}}}
+                </style>    
+                """, 
+                unsafe_allow_html=True,
+    )
    
-st_map = st_folium(m, width= _max_width_(100), height=800, returned_objects=[]) 
+st_map = st_folium(m, width= _max_width_(100), height=_max_height_(80), returned_objects=[]) 
 
 
 
