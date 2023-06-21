@@ -482,8 +482,16 @@ L.control.bigImage({position: 'topleft'}).addTo({map});
 m.get_root().script.add_child(folium.Element(png_js))
 ########################################### END: MAP FEATURES AND PLUGIN #########################################################  
 ##################################################################################################################################################
-
-st_map = st_folium(m, width=2000, height=500, returned_objects=[]) 
+def _max_width_(prcnt_width:int = 75):
+    max_width_str = f"max-width: {prcnt_width}%;"
+    st.markdown(f""" 
+                <style> 
+                .reportview-container .main .block-container{{{max_width_str}}}
+                </style>    
+                """, 
+                unsafe_allow_html=True,
+    )
+st_map = st_folium(m, width= _max_width_(80), height=500, returned_objects=[]) 
 
 
 
