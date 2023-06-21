@@ -485,7 +485,7 @@ m.get_root().script.add_child(folium.Element(png_js))
 
 st_map = st_folium(m, width=1900, height=500, returned_objects=[]) 
 
-st.container(st_map)
+
 
    
 
