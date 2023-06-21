@@ -33,7 +33,7 @@ def display_map():
     cols   = ['Area', 'Structure', 'dp_mp', 'Name', 'RD', 'am_serial_no', 'Weight', 'DESCRIP', 'Vendor', 'fab_start_date', 'fab_completed_date', 'srn_date']
     df_one_drive = "https://1drv.ms/u/s!AiiyfzN3UvpehmtMgdLsh8aMt813?e=QyoUBi"
     df_link = create_onedrive_directdownload (df_one_drive)
-    df = pd.read_csv(df_link, encoding='ISO-8859-1', dtype = "string")[cols]
+    df = pd.read_csv(df_link, encoding='ISO-8859-1', low_memory=False)[cols]
 
 
     # add a Main Description of marks by few main category (MAIN STEEL, GRATINGS,..)
