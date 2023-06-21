@@ -33,7 +33,7 @@ def create_onedrive_directdownload (onedrive_link):
 cols   = ['Area', 'Structure', 'dp_mp', 'Name', 'RD', 'am_serial_no', 'Weight', 'DESCRIP', 'Vendor', 'fab_start_date', 'fab_completed_date', 'srn_date']
 df_one_drive = "https://1drv.ms/u/s!AiiyfzN3UvpehmtMgdLsh8aMt813?e=QyoUBi"
 df_link = create_onedrive_directdownload (df_one_drive)
-df = pd.read_csv(df_link, encoding='ISO-8859-1')[cols]
+df = pd.read_csv(df_link,  iterator = True, chunksize = 1000, encoding='ISO-8859-1', dtype = "string")[cols]
 
 
 # add a Main Description of marks by few main category (MAIN STEEL, GRATINGS,..)
@@ -49,7 +49,7 @@ df[["Weight", "fab_start_status","fab_completed_status"]]= df[["Weight", "fab_st
 
 df["Fabric_Started_Qty"] = df['fab_start_status']*df['Weight']
 df["Fabricated_Qty"] = df['fab_completed_status']*df['Weight']
-
+dtypes.astype(str)[0]
 
 # create a table with qty summarized by Structure Tag
 df_Prfb = df.groupby("Structure")[["Weight", "Fabric_Started_Qty","Fabricated_Qty"]].sum().div(1000).round(2).reset_index()
@@ -481,7 +481,7 @@ $(document).ready(function(){
 m.get_root().script.add_child(folium.Element(png_js))
 ########################################### END: MAP FEATURES AND PLUGIN #########################################################  
 ##################################################################################################################################################
-st_map = st_folium(m, width=1500, height=500, returned_objects=[])
+st_map = st_folium(m, minmax_width=2000, height=1000, returned_objects=[])
 
     
 
