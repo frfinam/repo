@@ -1,9 +1,6 @@
-SQLAlchemy
+
 folium
 streamlit_folium
 rasterio
 geopandas
-mysqlclient
-mysql_connector
-mysql-connector-python
 openpyxl
