@@ -482,8 +482,8 @@ L.control.bigImage({position: 'topleft'}).addTo({map});
 m.get_root().script.add_child(folium.Element(png_js))
 ########################################### END: MAP FEATURES AND PLUGIN #########################################################  
 ##################################################################################################################################################
-st.set_page_config(layout="wide")
-st_map = st_folium(m, returned_objects=[]) 
+
+st_folium(m, returned_objects=[]) 
 
 
 
