@@ -35,6 +35,8 @@ def create_onedrive_directdownload (onedrive_link):
 ########################################### START: CREATE A TABLE OF PREFABRICATION PROGRESS #########################################################
 #Connect to rddump of easystructure dataview to have prefabrication progress
 cols   = ['Area', 'Structure', 'dp_mp', 'Name', 'RD', 'am_serial_no', 'Weight', 'DESCRIP', 'Vendor', 'fab_start_date', 'fab_completed_date', 'srn_date']
+
+#INPUT
 df_one_drive = "https://1drv.ms/u/s!AiiyfzN3UvpehmtMgdLsh8aMt813?e=QyoUBi"
 df_link = create_onedrive_directdownload (df_one_drive)
 df = pd.read_csv(df_link, encoding='ISO-8859-1', low_memory=False)[cols]
@@ -69,6 +71,7 @@ df_Prfb = df.groupby("Structure")[["Weight", "Fabric_Started_Qty","Fabricated_Qt
 ########################################### START: CREATE A TABLE OF PROCUREMENT PROGRESS #########################################################
 columns_selected = ["ROUTING_METHOD_CODE","Requisition number","Req Pos","PO Number","Req Sub Pos","ISH Pos","ISH Sub Pos","PO Long description",  "Tag Number", "Ident Description", "Supplier Code","Destination", "Forecasted Date", "Actual Date"]
 
+#INPUT
 #file = "C:/Users/ffinamore/Desktop/Folium/Input/IEETDE01.xlsx"
 #  option from one drive
 file_one_drive ="https://1drv.ms/x/s!AiiyfzN3UvpehmYbSBx3aFBcaXGr?e=36n4ud"
@@ -127,12 +130,16 @@ df_Exp.rename(columns={'ShippedWeight': 'Shipped_Qty','AtSiteWeight': 'At_Site_Q
 
 
 ########################################### START: LOAD IMAGES (ITEMS SNAPSHOT AND MAP) #########################################################
+
+#INPUT
 # file path of the screenshots of the pr/str (png) from local folder
 #screens_path = "C://Users//ffinamore//Desktop//Folium//ScreenShot//"
 
+#INPUT
 # file path of the screenshots of the pr/str (png)  from cloud
 screens_path = "https://github.com/frfinam/scrsht/blob/main/"
 
+#INPUT
 # file path of the image (png) to add as tile layer
 #img_MNA_SAT = "C://Users//ffinamore//OneDrive - TEN//20 - Projects//082755C - Neste RDCG Rotterdam//05 - WFM//01 - Civil//06 - Mapping//Sat//23-05-09_MNA//Factual Plot Plan_MNA_05.05.2023_BI_modified.tif"
 #  option from one drive
@@ -166,7 +173,7 @@ NARPC = N_absolute_reference_point_cad_m = 443433.61
 ED = E_delta_local_cad_local_3d_m = -1500
 ND = N_delta_local_cad_local_3d_m = 300
 
-
+#INPUT
 #df_3D = pd.read_csv("C://Users//ffinamore//Desktop//Folium//Input//3D_Item.csv")
 #  option from one drive
 df_3D_one_drive = "https://1drv.ms/u/s!AiiyfzN3UvpehmKgEVggK5U8u88O?e=YhiFlx"
