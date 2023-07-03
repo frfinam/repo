@@ -2,6 +2,9 @@ import base64
 import numpy as np 
 import pandas as pd
 
+## enable Copy-on-write optimizations to save on memory and avoid making copies of data until written to (if possible).
+pd.options.mode.copy_on_write = True
+
 import folium
 from folium import plugins
 
